@@ -1,4 +1,5 @@
 #include <HeatpumpIRFactory.h>
+#include "YusufAC.h"
 
 
 HeatpumpIR* HeatpumpIRFactory::create(const char *modelName) {
@@ -98,6 +99,10 @@ HeatpumpIR* HeatpumpIRFactory::create(const char *modelName) {
   } else if (strcmp_P(modelName, PSTR("KY-26")) == 0) {
     return new KY26HeatpumpIR();
   }
+  else if (strcmp_P(modelName, PSTR("yusufac")) == 0) {
+    return new YusufAC();
+  }
+
 
    return NULL;
 }
